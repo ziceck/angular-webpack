@@ -12,7 +12,7 @@ module.exports = {
     // vendor: './src/vendor.ts',
     polyfills: './src/polyfills.ts',
     main: './src/main.ts',
-    styles: './src/styles.css'
+    styles: './src/styles.scss'
   },
   resolve: {
     extensions: ['.js', '.ts'],
@@ -61,12 +61,12 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['to-string-loader', 'css-loader']
+        use: ['style-loader', 'to-string-loader', 'css-loader']
       },
       {
         test: /\.scss$/,
         use: [
-          'to-string-loader',
+          'style-loader', // load main style
           'css-loader',
           'sass-loader'
         ],
