@@ -1,3 +1,4 @@
+// https://jasonwatmore.com/post/2019/09/04/angular-webpack-how-to-add-global-css-styles-to-angular-with-webpack
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {TsconfigPathsPlugin} = require('tsconfig-paths-webpack-plugin'); // used for paths in ts config
@@ -61,15 +62,16 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'] // to-string-loaders works with styleUrls
+        use: ['to-string-loader', 'css-loader'] // to-string-loaders works with styleUrls
       },
       {
         test: /\.scss$/,
         use: [
-          'style-loader', // load main style
+          'style-loader', // load main style, import css in ts file
           'css-loader',
           'sass-loader'
         ],
+        include: path.join(__dirname, 'src/styles.scss')
       },
     ]
   },
