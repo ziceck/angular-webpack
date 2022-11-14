@@ -61,7 +61,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'to-string-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'] // to-string-loaders works with styleUrls
       },
       {
         test: /\.scss$/,
