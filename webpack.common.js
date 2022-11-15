@@ -22,10 +22,6 @@ module.exports = {
     ]
   },
   devtool: 'source-map',
-  devServer: {
-    port: 4200,
-    historyApiFallback: true
-  },
   output: {
     path: path.resolve(__dirname, 'dist'), // output directory
     filename: '[name].js' // name of the generated bundle

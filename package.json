@@ -4,10 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:webpack": "npx webpack-dev-server --mode development --stats-children",
+    "start:webpack": "webpack serve --open --config webpack.dev.js --stats-children",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:webpack": "webpack --config webpack.prod.js"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +29,7 @@
     "to-string-loader": "^1.2.0",
     "tsconfig-paths-webpack-plugin": "^4.0.0",
     "tslib": "^2.3.0",
+    "webpack-merge": "^5.8.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
